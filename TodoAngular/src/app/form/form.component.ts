@@ -1,0 +1,32 @@
+import { Component, EventEmitter, OnInit, Output } from '@angular/core';
+import { Todo } from '../todo';
+
+@Component({
+  selector: 'todo-form',
+  template: `
+    <form (submit)="submit()">
+      <input [(ngModel)]="todo.text" name="text">
+      <button>+</button>
+    </form>
+  `,
+  styles: []
+})
+export class FormComponent implements OnInit {
+
+  public todo = new Todo();
+
+  @Output()
+  public onNewTodo = new EventEmitter<Todo>();
+
+  constructor() { }
+
+  ngOnInit() {
+  }
+
+  submit() {
+    // Si sous-objets ou sous-tableaux utiliser lodash.cloneDeep
+    const clonedTodo = Object.assign(new Todo(), this.todo);
+    this.onNewTodo.emit(clonedTodo);
+  }
+
+}

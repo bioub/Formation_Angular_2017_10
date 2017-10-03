@@ -1,6 +1,19 @@
+/*
+function Contact(prenom) {
+  this.prenom = prenom;
+}
+
+Contact.prototype.hello = function() {
+
+};
+
+const romain = new Contact('Romain');
+romain.hello();
+*/
+
 class Horloge {
   protected container: Element;
-  
+
   constructor(container) {
     this.container = container;
   }

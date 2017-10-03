@@ -1,19 +1,19 @@
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
-  resolve: {
-    extensions: ['.ts', '.tsx', '.js', '.jsx']
-  },
-  devtool: 'source-map',
   entry: './src/app/main.ts',
   output: {
-    path: __dirname + '/dist', 
+    path: __dirname + '/dist',
     filename: 'bundle.[hash].js'
   },
+  resolve: {
+    extensions: ['.ts', '.js']
+  },
+  devtool: 'source-map',
   module: {
     loaders: [
       {
-        test: /\.tsx?$/,
+        test: /\.ts$/,
         loader: 'awesome-typescript-loader'
       }
     ]

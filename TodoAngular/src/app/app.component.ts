@@ -1,14 +1,19 @@
 import { Component } from '@angular/core';
+import { Todo } from './todo';
 
 @Component({
-  selector: 'app-root',
+  selector: 'todo-root',
   template: `
-    <p>
-      app Works!
-    </p>
+    <h1>TodoList</h1>
+    <todo-form (onNewTodo)="insertTodo($event)"></todo-form>
+    <todo-list [todos]="todos"></todo-list>
   `,
   styles: []
 })
 export class AppComponent {
-  title = 'app';
+  public todos: Todo[] = [];
+
+  insertTodo(todo) {
+    this.todos.push(todo);
+  }
 }

@@ -13,7 +13,7 @@ import { Component } from '@angular/core';
     <hr>
     <app-condition></app-condition>
     <hr>
-    <app-horloge-io format="HH:mm:ss" [delay]="1000"></app-horloge-io>
+    <app-horloge-io format="HH:mm" [delay]="60 * 1000"></app-horloge-io>
     <hr>
     <app-hello-io (onPrenomChange)="updatePrenom($event)"></app-hello-io>
     <p>

@@ -5,6 +5,7 @@ import { Component, OnInit } from '@angular/core';
   template: `
     <p>
       <input type="checkbox" [(ngModel)]="showSpan">
+      <span [hidden]="!showSpan">condition Works!</span>
       <span *ngIf="showSpan">condition Works!</span>
     </p>
 

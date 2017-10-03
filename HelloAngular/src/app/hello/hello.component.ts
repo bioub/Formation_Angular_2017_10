@@ -3,10 +3,12 @@ import { Component, OnInit } from '@angular/core';
 @Component({
   selector: 'app-hello',
   template: `
+    <p>Prénom : <input on-input="updatePrenom($event)"></p>
+    <p>Prénom : <input (input)="updatePrenom($event)"></p>
+    
     <p>Prénom : <input bindon-ngModel="prenom"></p>
     <p>Prénom : <input [(ngModel)]="prenom"></p>
-    <p>Prénom : <input (input)="updatePrenom($event)"></p>
-    <p>Prénom : <input on-input="updatePrenom($event)"></p>
+
     <p>Hello {{prenom}}</p>
   `,
   styles: []

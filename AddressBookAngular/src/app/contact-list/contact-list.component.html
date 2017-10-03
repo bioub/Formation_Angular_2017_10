@@ -1,3 +1,13 @@
-<p>
-  contact-list works!
-</p>
+<md-grid-list cols="4">
+    <md-grid-tile colspan="1" rowHeight="fit">
+      <md-nav-list>
+        <a md-list-item [routerLink]="['', 'contacts', c.id]"
+          *ngFor="let c of contacts">
+          {{c.prenom}} {{c.nom}}
+        </a>
+      </md-nav-list>
+    </md-grid-tile>
+    <md-grid-tile colspan="3" rowHeight="fit">
+      <router-outlet></router-outlet>
+    </md-grid-tile>
+</md-grid-list>

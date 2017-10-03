@@ -1,0 +1,10 @@
+<div *ngIf="contact">
+  <p>Prénom: {{contact.prenom}}</p>
+  <p>Nom: {{contact.nom}}</p>
+  <p *ngIf="contact.email">
+    Email: {{contact.email}}
+  </p>
+  <p *ngIf="contact.telephone">
+    Tel: {{contact.telephone}}
+  </p>
+</div>

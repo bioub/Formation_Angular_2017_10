@@ -1,0 +1,38 @@
+{
+  "compilerOptions": {
+    "target": "es5",
+    "module": "es2015",
+    "moduleResolution": "node",
+    "declaration": true,
+    "noImplicitAny": true,
+    "strictNullChecks": true,
+    "sourceMap": false,
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
+    "outDir": "./dist",
+    "rootDir": "./src",
+    "skipLibCheck": true,
+    "stripInternal": true,
+    "typeRoots": [
+      "./node_modules/@types"
+    ],
+    "lib": [
+      "dom",
+      "es2015"
+    ]
+  },
+  "compileOnSave": false,
+  "buildOnSave": false,
+  "exclude": [
+    "node_modules",
+    "dist",
+    "tests",
+    "**/*.ngfactory.ts",
+    "**/*.shim.ts"
+  ],
+  "angularCompilerOptions": {
+    "genDir": "dist",
+    "skipTemplateCodegen": true,
+    "strictMetadataEmit": true
+  }
+}

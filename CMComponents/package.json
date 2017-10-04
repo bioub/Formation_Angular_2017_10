@@ -1,0 +1,19 @@
+{
+  "name": "cmcomponents",
+  "version": "0.0.1",
+  "main": "dist/index.js",
+  "typings": "dist/index.d.ts",
+  "dependencies": {
+    "@angular/common": "^4.4.4",
+    "@angular/core": "^4.4.4",
+    "rxjs": "^5.4.3"
+  },
+  "devDependencies": {
+    "@angular/compiler": "^4.4.4",
+    "@angular/compiler-cli": "^4.4.4",
+    "typescript": "^2.5.3"
+  },
+  "scripts": {
+    "build": "ngc -p tsconfig.json"
+  }
+}

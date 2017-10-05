@@ -12,6 +12,6 @@ export class TodoService {
   ) { }
 
   getList(): Observable<Todo[]> {
-    return this.http.get('/assets/todos.json');
+    return this.http.get<Todo[]>('/assets/todos.json');
   }
 }

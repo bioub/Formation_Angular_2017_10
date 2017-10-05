@@ -9,13 +9,15 @@ describe('todo-angular-test App', () => {
 
   it('should display title', () => {
     page.navigateTo();
-    expect(page.getParagraphText()).toEqual('TodoList');
+    expect(page.getH1Text()).toEqual('TodoList');
   });
 
   it('should add todo', () => {
     page.navigateTo();
+    expect(page.getTodos().count()).toBe(2); // 2 du serveur
     page.insertTodo('Todo A');
-    expect(page.getTodos().count()).toBe(1);
-    expect(page.getTodos().first().getText()).toEqual('Todo A');
+    page.insertTodo('Todo B');
+    expect(page.getTodos().count()).toBe(4);
+    expect(page.getTodos().first().getText()).toEqual('Todo B');
   });
 });

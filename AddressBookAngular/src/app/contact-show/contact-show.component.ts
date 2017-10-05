@@ -1,3 +1,4 @@
+import { ContactHttpService } from './../contact-http.service';
 import { ContactService } from './../contact.service';
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
@@ -17,7 +18,7 @@ export class ContactShowComponent implements OnInit {
 
   constructor(
     protected route: ActivatedRoute,
-    protected contactService: ContactService,
+    protected contactService: ContactHttpService,
   ) { }
 
   ngOnInit() {

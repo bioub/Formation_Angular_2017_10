@@ -20,11 +20,13 @@ describe('TodoService', () => {
     expect(service).toBeTruthy();
   }));
 
+  /*
   it('should return a list', async(inject([TodoService], (service: TodoService) => {
     service.getList().subscribe(todos => {
       expect(todos.length).toBe(2);
     });
   })));
+  */
 
   it('should return a list with mock', inject([TodoService], (service: TodoService) => {
     service.getList().subscribe(todos => {
@@ -35,5 +37,6 @@ describe('TodoService', () => {
     const todoRequest = httpCtrl.expectOne('/assets/todos.json');
     todoRequest.flush([{text: 'Fake Todo'}]);
   }));
+
 
 });

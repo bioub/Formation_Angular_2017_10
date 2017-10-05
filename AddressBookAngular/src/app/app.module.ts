@@ -1,6 +1,9 @@
+import { ContactHttpService } from './contact-http.service';
 import { ContactService } from './contact.service';
 import { NgModule } from '@angular/core';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';import { BrowserModule } from '@angular/platform-browser';
+import { FormsModule } from '@angular/forms';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations'; import { BrowserModule } from '@angular/platform-browser';
+import { HttpClientModule } from '@angular/common/http';
 import {
   MatToolbarModule,
   MatMenuModule,
@@ -8,6 +11,8 @@ import {
   MatGridListModule,
   MatListModule,
 } from '@angular/material';
+
+import { CMHorlogeModule } from 'cmcomponents';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -20,23 +25,26 @@ import { ContactShowComponent } from './contact-show/contact-show.component';
 @NgModule({
   declarations: [
     AppComponent,
+    NotFoundComponent,
     ContactListComponent,
     ContactAddComponent,
-    NotFoundComponent,
     ContactShowComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
+    HttpClientModule,
+    FormsModule,
+    CMHorlogeModule,
     MatToolbarModule,
     MatMenuModule,
-    MatButtonModule,
     MatGridListModule,
     MatListModule,
   ],
   providers: [
     ContactService,
+    ContactHttpService,
   ],
   bootstrap: [AppComponent]
 })

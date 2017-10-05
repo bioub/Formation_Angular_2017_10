@@ -24,8 +24,6 @@ describe('ListComponent', () => {
     fixture.detectChanges();
 
     els  = fixture.debugElement.queryAll(By.css('todo-item'));
-
-    fixture.detectChanges();
   });
 
   it('should create', () => {

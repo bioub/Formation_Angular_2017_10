@@ -1,10 +1,9 @@
-const Observable = require('rxjs/Observable');
-require('rxjs/Observable/interval');
-require('rxjs/add/operator/map');
+const Observable = require('rxjs').Observable;
 
 function setIntervalObservable() {
   return Observable.interval(1000)
-          .map(val => val + 1 + 's');
+          .filter(val => val % 2 === 0)
+          .map(val => val + 1 + 's')
 }
 
 setIntervalObservable()

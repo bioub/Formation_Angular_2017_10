@@ -1,3 +1,22 @@
-<p>
-  contact-add works!
-</p>
+<form (submit)="contactForm.valid && addContact()"
+    #contactForm="ngForm">
+  <p>
+    Prénom : <input [(ngModel)]="contact.prenom"
+                name="prenom" required #prenom="ngModel">
+    <span *ngIf="prenom.invalid && prenom.touched">
+      Le prénom est obligatoire
+    </span>
+  </p>
+  <p>
+    Nom : <input [(ngModel)]="contact.nom" name="nom" required>
+  </p>
+  <p>
+    Email : <input [(ngModel)]="contact.email" name="email">
+  </p>
+  <p>
+    Téléphone : <input [(ngModel)]="contact.telephone" name="telephone">
+  </p>
+  <p>
+    <button>+</button>
+  </p>
+</form>
